@@ -360,45 +360,47 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Nuevo Disco</h1>
+                    <!-- Page Heading 
+                    <h1 class="h3 mb-4 text-gray-800">Nuevo Disco</h1>-->
 
                     <div class="card o-hidden border-0 shadow-lg my-5">
                         <div class="card-body p-0">
                             <!-- Nested Row within Card Body -->
                             <div class="row">
-                                <div class="col-lg-5">
-                                    <img src="https://images.unsplash.com/photo-1535992165812-68d1861aa71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1537&q=80"
-                                        alt="" height="400px" class="img-fluid m-3">
+                                <div class="col-lg-5 bg-register-image">
+
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="p-5">
                                         <div class="text-center">
-                                            <h1 class="h4 text-gray-900 mb-4"> Añadir nuevo disco</h1>
+                                            <h1 class="h4 text-gray-900 mb-4"> Crear disco nuevo</h1>
                                         </div>
                                         <form class="user">
                                             <div class="form-group row">
                                                 <div class="col-sm-12 mb-3 mb-sm-0">
-                                                    <input type="text" class="form-control form-control-user" id="id"
-                                                        name="id" placeholder="Id de Disco">
+                                                    <input type="text" class="form-control form-control-user" disabled
+                                                        value="-1" id="id" name="id" placeholder="Id de Disco">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-12 mb-3 mb-sm-0">
-                                                    <input type="text" class="form-control form-control-user" id="cover"
-                                                        name="cover" placeholder="Cover">
+                                                    <input type="text" class="form-control form-control-user" required
+                                                        pattern="((https?:\/\/www?)?|(https?:\/\/)?|(www\.)?)?[a-zA-Z0-9?=&\/\._-]{1,}\.{1}(?:jpe?g|png|gif)"
+                                                        id="cover" name="cover" placeholder="Cover">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-12 mb-3 mb-sm-0">
-                                                    <input type="text" class="form-control form-control-user"
-                                                        id="titulo" placeholder="Título">
+                                                    <input type="text" class="form-control form-control-user" required
+                                                        pattern="[a-zA-Z123456789ñÁáÉéÍíÓóÚú!]{1,100}" id="titulo"
+                                                        name="titulo" placeholder="Título">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-12 mb-3 mb-sm-0">
-                                                    <input type="text" class="form-control form-control-user" id="grupo"
-                                                        placeholder="Grupo">
+                                                    <input type="text" class="form-control form-control-user" required
+                                                        pattern="[a-zA-Z123456789ñÁáÉéÍíÓóÚú!]{1,100}" id="grupo"
+                                                        name="grupo" placeholder="Grupo">
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -406,9 +408,10 @@
                                                     placeholder="Fecha">
                                             </div>
 
-                                            <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                                Añadir Disco
-                                            </a>
+                                            <input type="submit" href="#" class="btn btn-primary btn-user btn-block"
+                                                value="Crear" />
+
+
 
 
                                         </form>
@@ -449,23 +452,23 @@
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">¿Desea finalizar la sesión?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">¿Desea finalizar la sesión?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Elija Logout para terminar la sesión.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="index.html">Logout</a>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">Elija Logout para terminar la sesión.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="index.html">Logout</a>
-        </div>
-      </div>
     </div>
-  </div>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
