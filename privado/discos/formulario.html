@@ -363,34 +363,41 @@
                     <!-- Page Heading 
                     <h1 class="h3 mb-4 text-gray-800">Nuevo Disco</h1>-->
 
+                    <!--Card con formulario-->
                     <div class="card o-hidden border-0 shadow-lg my-5">
                         <div class="card-body p-0">
                             <!-- Nested Row within Card Body -->
-                            <div class="row">
-                                <div class="col-lg-5 bg-register-image">
+                            <div class="row justify-content-center">
 
-                                </div>
                                 <div class="col-lg-7">
                                     <div class="p-5">
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4"> Crear disco nuevo</h1>
                                         </div>
-                                        <form class="user">
-                                            <div class="form-group row">
+
+                                        <!--Formulario registro disco nuevo-->
+                                        <form class="" action="#urlcontrolador" method="POST">
+                                            <!-- <div class="form-group row">
                                                 <div class="col-sm-12 mb-3 mb-sm-0">
+                                                    <label for="id" class="control-label">Id</label>
                                                     <input type="text" class="form-control form-control-user" disabled
                                                         value="-1" id="id" name="id" placeholder="Id de Disco">
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="form-group row">
                                                 <div class="col-sm-12 mb-3 mb-sm-0">
+                                                    <label for="cover" class="control-label">
+                                                        <span class="text-danger">*</span> Cover</label>
                                                     <input type="text" class="form-control form-control-user" required
-                                                        pattern="((https?:\/\/www?)?|(https?:\/\/)?|(www\.)?)?[a-zA-Z0-9?=&\/\._-]{1,}\.{1}(?:jpe?g|png|gif)"
-                                                        id="cover" name="cover" placeholder="Cover">
+                                                        pattern=".{1,255}\.(jpg|jpeg|png|gif)" id="cover" name="cover"
+                                                        placeholder="Cover" onblur="cargarImagen(event, this.value)">
+                                                    <!--"((https?:\/\/www?)?|(https?:\/\/)?|(www\.)?)?[a-zA-Z0-9?=&\/\._-]{1,}\.{1}(?:jpe?g|png|gif)"-->
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-12 mb-3 mb-sm-0">
+                                                    <label for="titulo" class="control-label">
+                                                        <span class="text-danger">*</span> Título</label>
                                                     <input type="text" class="form-control form-control-user" required
                                                         pattern="[a-zA-Z123456789ñÁáÉéÍíÓóÚú!]{1,100}" id="titulo"
                                                         name="titulo" placeholder="Título">
@@ -398,33 +405,39 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-12 mb-3 mb-sm-0">
+                                                    <label for="grupo" class="control-label">
+                                                        <span class="text-danger">*</span> Grupo</label>
                                                     <input type="text" class="form-control form-control-user" required
                                                         pattern="[a-zA-Z123456789ñÁáÉéÍíÓóÚú!]{1,100}" id="grupo"
                                                         name="grupo" placeholder="Grupo">
                                                 </div>
                                             </div>
                                             <div class="form-group">
+                                                <label for="fecha" class="control-label">
+                                                    <span class="text-danger">*</span> Fecha (TODO jquery ui date
+                                                    datepicker https://jqueryui.com/datepicker/)</label>
                                                 <input type="date" class="form-control form-control-user" id="fecha"
                                                     placeholder="Fecha">
                                             </div>
-
                                             <input type="submit" href="#" class="btn btn-primary btn-user btn-block"
                                                 value="Crear" />
-
-
-
-
                                         </form>
-                                        <hr>
+                                        <!-- /Formulario registro-->
 
+
+                                        <hr>
                                     </div>
+                                </div>
+                                <div class="col-lg-5 bg-register-image" id="container-image">
+
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- /Card-->
 
                 </div>
-                <!-- /.container-fluid -->
+                <!-- /End .container-fluid -->
 
             </div>
             <!-- End of Main Content -->
@@ -479,6 +492,20 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <script>
+        function cargarImagen(event, url) {
+         
+            let container = document.getElementById('container-image');
+            let imagen = `<img src="${url}" alt="imagen disco">`;
+
+            // cambiamos estilos en linea del contenedor
+            container.style.backgroundImage = "url(" + url + ")";
+            container.style.backgroundPosition = "center";
+            container.style.backgroundSize = "cover";
+            container.style.backgroundRepeat = "no-repeat";
+        }
+    </script>
 
 </body>
 

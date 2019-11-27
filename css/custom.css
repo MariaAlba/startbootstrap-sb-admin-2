@@ -1,4 +1,20 @@
-/**/
+/*
+    CSS propio para sobreescribir estilos
+*/
+
+input[type="text"]:valid, input[type="email"]:valid, input[type="url"]:valid, input[type="date"]:valid {
+    background-color: #fff;
+    border-color: #bac8f3;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(78,115,223,0.25);
+}
+
+input[type="text"]:focus:invalid, input[type="email"]:focus:invalid, input[type="url"]:focus:invalid, input[type="date"]:invalid {
+    background-color: #fff;
+    border-color: #e74a3b;;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(271,73,59,0.63);
+}
 
 .altura-vp{
   min-height:100vh;
@@ -25,4 +41,9 @@ table img {
   width: 100px;
   height: 100px;
   border-radius:50%;
+}
+
+#container-image img {
+ max-width:100%;
+ height:auto;
 }
